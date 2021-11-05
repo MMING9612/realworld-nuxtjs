@@ -18,3 +18,19 @@ export const register = data => {
     data
   })
 }
+// 更新资料
+export const updateUser = data => {
+  return request({
+    method: 'PUT',
+    url: '/api/user',
+    data
+  })
+}
+
+// 个人中心
+export const getProfile = username => {
+  return request({
+    method: 'GET',
+    url: `/api/profiles/${username}`,
+  })
+}

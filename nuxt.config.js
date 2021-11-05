@@ -42,7 +42,7 @@
                 component: resolve(__dirname, 'pages/settings/')
               },
               {
-                path: '/editor',// 文章编辑及发布
+                path: '/editor/:slug?',// 文章编辑及发布
                 name: 'editor',
                 component: resolve(__dirname, 'pages/editor/')
               },
@@ -56,7 +56,7 @@
         ])
       }
     },
-  
+    // 对外访问 监听所有地址
     server: {
       host: '0.0.0.0',
       port: 3000

@@ -55,10 +55,36 @@ export const getComments = slug => {
 }
 
 // 发布文章评论
-export const AddComments = (slug, params) => {
+export const addComments = (slug, comment) => {
   return request({
     method: 'POST',
     url: `/api/articles/${slug}/comments`,
-    params
+    data: { comment }
+  })
+}
+
+// 发布文章
+export const addArticle = article => {
+  return request({
+    method: 'POST',
+    url: `/api/articles`,
+    data: { article }
+  })
+}
+
+// 删除文章
+export const deleteArticle = slug => {
+  return request({
+    method: 'DELETE',
+    url: `/api/articles/${slug}`,
+  })
+}
+
+// 更新文章
+export const updateArticle = (slug, data) => {
+  return request({
+    method: 'PUT',
+    url: `/api/articles/${slug}`,
+    data
   })
 }
