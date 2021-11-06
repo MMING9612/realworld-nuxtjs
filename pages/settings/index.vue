@@ -99,8 +99,10 @@ export default {
       const { data } = await updateUser({
         user: this.user,
       });
+      
       this.$store.commit("setUser", data.user);
-      Cookie.set("user", data.user);
+      Cookie.set("user", JSON.parse(data.user));
+
       this.$router.push(`/profile/${data.user.username}`);
     },
     logout() {
